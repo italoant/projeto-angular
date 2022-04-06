@@ -30,6 +30,7 @@ export class NavComponent implements OnInit {
 
   deslog(){
     localStorage.removeItem('logado')
+    this.serviceAuth.usuarioLogado.emit(false)
     this.trocarNav = false
     this.router.navigate([''])    
   }

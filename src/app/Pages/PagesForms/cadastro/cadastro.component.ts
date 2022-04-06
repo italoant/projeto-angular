@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -9,48 +11,43 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
-  mensagem: string = ''
+  formulario: FormGroup;
 
-  nome: string = ''
 
-  user: string = ''
-
-  email: any = ''
-
-  senha: any = ''
-
-  dataNascimento: any = Array();
-
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
-  }
 
-  salvarDados() {
-    if (this.nome === '') {
-      this.mensagem = 'preencha o campo com seu nome'
-    } else if (this.user === '') {
-      this.mensagem = 'preencha o campo com seu usuario'
-    } else if (this.email === '') {
-      this.mensagem = 'preencha o campo com seu email'
-    } else if (this.senha === '' || this.senha.length < 5) {
-      this.mensagem = 'a senha deve ter no minimo 8 digitos'
-    } else {
-      localStorage.setItem('nome', this.nome)
-      localStorage.setItem('user', this.user)
-      localStorage.setItem('email', this.email)
-      localStorage.setItem('senha', this.senha)
-      localStorage.setItem('data', this.dataNascimento)
-      this.router.navigate(['/login'])
-    }
+    this.formulario = this.formBuilder.group({
+      nome: [null],
+      user: [null],
+      email: [null],
+      pass: [null],
+    })
 
   }
+
+
+
+  onSubmit(){
+
+    this.http.post('https://jsonplaceholder.typicode.com/posts', JSON.stringify(this.formulario.value))
+      .subscribe(dados => {
+        console.log(dados)
+        this.formulario.reset()
+    },((error:any) => {console.log("error")}))
+    
+    console.log(this.formulario)
+
+  }
+
 
   limpar() {
-    this.nome = ''
-    this.user = ''
-    this.email = ''
-    this.senha = ''
+    this.formulario.reset()
   }
 
 }

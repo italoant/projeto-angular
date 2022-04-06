@@ -1,9 +1,9 @@
-<div class="contForm">
+<form #form="ngForm" class="contForm">
     <p>{{mensagem}}</p>
     <div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Usuario" id="usuario" type="text" class="validate" [(ngModel)]="user">
+                <input placeholder="Usuario" id="usuario" name="nome"  type="text" class="validate" [(ngModel)]="user">
             </div>
         </div>
     </div>
@@ -19,5 +19,6 @@
         <a (click)="login()" class="waves-effect waves-light btn-small">Entrar</a>
         <a routerLink="/cadastro" class="waves-effect waves-light btn-small">Cadastre-se</a>
     </div>
+    <br>
     <p id="esqueceu-senha">Esqueceu a senha? <a id="contato">Clique aqui.</a></p>
-</div>
+</form>

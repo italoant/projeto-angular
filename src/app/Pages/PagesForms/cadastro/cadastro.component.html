@@ -26,12 +26,12 @@
         <button (click)="limpar()"> Cancelar </button>
     </div>
 </div> -->
-<div class="contForm">
+<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)"  class="contForm">
     <p class="mensagem">{{mensagem}}</p>
     <div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Nome" id="nome" type="text" class="validate" [(ngModel)]="nome">
+                <input placeholder="Nome" id="nome"type="text" class="validate" [(ngModel)]="nome">
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
     <div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Email" id="email" type="email" class="validate" [(ngModel)]="email">
+                <input placeholder="Email" id="email" class="validate" [(ngModel)]="email" required email>
             </div>
         </div>
     </div>
@@ -65,7 +65,63 @@
         </div>
     </div>
     <div class="contButton">
-        <a (click)="salvarDados()" class="waves-effect waves-light btn-small">Cadastrar</a>
+        <button type="submit" class="waves-effect waves-light btn-small">Cadastrar</button>
         <a (click)="limpar()" class="waves-effect waves-light btn-small">Cancelar</a>
     </div>
-</div>
+    
+</form> -->
+
+<form class="contForm" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <p class="mensagem"></p>
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Nome" formControlName="nome" id="nome"type="text" class="validate">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Usuario" formControlName="user"  id="usuario" type="text" class="validate" >
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Email" formControlName="email"  id="email" class="validate" required email>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Senha" formControlName="pass"  id="Senha" type="password" class="validate" >
+            </div>
+        </div>
+    </div>
+    <!-- <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Usuario" id="usuario" type="date" class="validate" [(ngModel)]="dataNascimento" max="2022-12-31">
+            </div>
+        </div>
+    </div> -->
+    <div class="contButton">
+        <button type="submit" class="waves-effect waves-light btn-small">Cadastrar</button>
+        <a (click)="limpar()" class="waves-effect waves-light btn-small">Cancelar</a>
+    </div>
+    
+
+    <div class="container">
+        {{formulario.value.nome}}
+        {{formulario.value.user}}
+        {{formulario.value.email}}
+        {{formulario.value.pass}}
+
+    </div>
+</form>
+
+

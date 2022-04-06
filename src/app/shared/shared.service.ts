@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import * as EventEmitter from 'events';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class PesquisaService {
 
   apiM: string = 'https://kitsu.io/api/edge/manga'
 
-  pagePesquisa: string;
+  pagePesquisa = new EventEmitter();
 
   popularA: string = 'anime?sort=-popularityRank';
 

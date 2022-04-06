@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
 import { PagesFormsRoutingModule } from '../pages-forms-routing.module';
 import { CadastroComponent } from './cadastro.component';
-import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     PagesFormsRoutingModule
   ]
 })
