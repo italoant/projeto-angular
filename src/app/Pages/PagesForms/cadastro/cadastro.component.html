@@ -1,0 +1,71 @@
+<!-- <div class="contForm">
+    <div class="form">
+        <h1>Cadastro</h1>
+        <div class="campos-form">
+            <p class="mensagem"></p>
+            <input type="text" placeholder="Nome e Sobrenome" id="nome" [(ngModel)]="nome"/>
+        </div>
+        <div class="campos-form">
+            <input type="text" placeholder="usuário"
+            [(ngModel)]="user"/>
+        </div>
+        <div class="campos-form">
+            <input type="email" placeholder="Email" 
+            [(ngModel)]="email"/>
+        </div>
+        <div class="campos-form">
+            <input type="password" placeholder="Senha" 
+            [(ngModel)]="senha"/>
+            <p class="mensagem"></p>
+        </div>
+        <div class="campos-form">
+            <label htmlFor="data"> Data de Nascimento</label>
+            <input [(ngModel)]="dataNascimento" type="date" id="inputDate" class="date" />
+        </div>
+        <button (click)="salvarDados()"> Cadastrar </button>
+        <button (click)="limpar()"> Cancelar </button>
+    </div>
+</div> -->
+<div class="contForm">
+    <p class="mensagem">{{mensagem}}</p>
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Nome" id="nome" type="text" class="validate" [(ngModel)]="nome">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Usuario" id="usuario" type="text" class="validate" [(ngModel)]="user">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Email" id="email" type="email" class="validate" [(ngModel)]="email">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Senha" id="Senha" type="password" class="validate" [(ngModel)]="senha">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Usuario" id="usuario" type="date" class="validate" [(ngModel)]="dataNascimento" max="2022-12-31">
+            </div>
+        </div>
+    </div>
+    <div class="contButton">
+        <a (click)="salvarDados()" class="waves-effect waves-light btn-small">Cadastrar</a>
+        <a (click)="limpar()" class="waves-effect waves-light btn-small">Cancelar</a>
+    </div>
+</div>

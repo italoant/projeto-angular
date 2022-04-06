@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper">
+    <!-- <div><a href="#" class="brand-logo right">Logo</a></div> -->
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li ><a routerLink="">home</a></li>
+      <li ><a #anime routerLink="/anime">anime</a></li>
+      <li ><a #manga routerLink="/manga">manga</a></li>
+      <li><a routerLink="/noticias">noticias</a></li>
+    </ul>
+    <ul class="left hide-on-med-and-down" *ngIf="trocarNav === false">
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/cadastro">Cadastro</a></li>
+    </ul>
+    <ul class="left hide-on-med-and-down" *ngIf="trocarNav === true">
+      <li><a >Perfil</a></li>
+      <li><a (click)="deslog()">Sair</a></li>
+    </ul>
+  </div>
+</nav>

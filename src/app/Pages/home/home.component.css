@@ -1,0 +1,33 @@
+.container{
+    min-height: 100vh;
+}
+
+.resp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem
+}
+
+.contResp {
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    margin: .8rem;
+}
+
+p{
+    width: 200px;
+}
+img {
+    width: 220px;
+    margin: .8rem;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 10px;
+    transition: .6s;
+}
+img:hover {
+    transform: scale(1.05);
+}

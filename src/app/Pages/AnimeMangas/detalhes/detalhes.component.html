@@ -1,0 +1,33 @@
+<div class="ContPrincipal">
+    <div>
+        <img class="banner" src={{respostaClick.attributes.coverImage?.small}} />
+        <div class="voltar" routerLink="/anime" (click)="deleteInfo()">Voltar</div>
+    </div>
+    <div class="infosPages">
+        <div class="contImg">
+            <img class="card_image" src={{respostaClick.attributes.posterImage.small}} />
+        </div>
+        <div class="detalhesClick">
+            <h1>{{respostaClick.attributes.titles.en_jp || respostaClick.attributes.titles.en ||
+                respostaClick.attributes.titles.en_us}}</h1>
+            <p>{{respostaClick.type === "anime" ? ("Anime") : ("Manga")}}</p>
+            <!-- <div class="categories">
+                <p></p>
+            </div> -->
+            <p>{{respostaClick.attributes.titles.en_jp || respostaClick.attributes.titles.en ||
+                respostaClick.attributes.titles.en_us}}</p>
+
+            <p>Classificação Média: {{respostaClick.attributes.averageRating ? respostaClick.attributes.averageRating :
+                'indisponível'}}%
+            </p>
+            <p class="subtitle_synopsis">{{respostaClick.attributes.synopsis}}</p>
+            <p>Data de lançamento: <span class="resposta_text">{{respostaClick.attributes.startDate ?
+                    respostaClick.attributes.startDate : 'Data indisponível'}}</span>
+            <p>Quantidade de episódios: <span class="resposta_text">{{respostaClick.attributes.episodeCount ? respostaClick.attributes.episodeCount
+                : "Indisponível"}}</span></p>
+            <p>Classificação Indicativa: {{respostaClick.attributes.ageRatingGuide ? respostaClick.attributes.ageRatingGuide : "Indisponível"}}</p>
+            <p>Status: {{respostaClick.attributes.status ? 'finalizado' : 'atual'}}</p>
+        </div>
+
+    </div>
+</div>

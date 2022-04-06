@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="inputCont">
+        <input placeholder="Dragon-ball" class="input" type="text" [(ngModel)]="searchAnime">
+        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="buscar()">Pesquisar
+            <i class="material-icons right">send</i>
+        </button>
+</div>
+    <h2>{{ resultado ? resultado : populares }}</h2>
+<div class="resp" *ngIf="showA()">
+    <div class="contResp" *ngFor="let resp of returnPesquisa">
+            <div routerLink="/detalhes" [queryParams]="{anime: resp.id}" (click)="detalhesA(resp)">
+                <a><img src="{{resp?.attributes?.posterImage?.small}}"></a>
+            </div>
+        </div>
+    </div>
+</div>

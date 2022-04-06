@@ -1,0 +1,84 @@
+.ContPrincipal{
+    position: relative;
+}
+.voltar {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    margin-top: .9rem;
+    border: 1px solid white;
+    background-color: #FE858A;
+    padding: .2rem .9rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+}
+.voltar > a {
+    text-decoration: none;
+    color: white;
+}
+
+.categories {
+    display: flex;
+    gap: .5rem;
+}
+.infosPages{
+    display: flex;
+    justify-content: center;
+}
+.detalhesClick{
+    max-width: 40vw;
+}
+.detalhesClick > p {
+    max-height: 100vh;
+    max-width: 800px;
+    display: flex;
+    text-align: justify;
+    align-items: flex-start;
+    gap: 2rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+
+}
+.categories > p {
+    display: inline-block;
+    background: #FE858A;
+    padding: .1rem .5rem;
+    border-radius: 1rem;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.subtitle_synopsis {
+    height: 23vh;
+    overflow: hidden;
+}
+
+.banner {   
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 3rem;
+    opacity: 20px;
+}
+
+.card_image {
+    border-radius: 2rem;
+    width: 250px;
+}  
+
+p {
+    text-align: justify;
+}
+
+.contImg {
+    margin: 0 1rem;
+    max-height: 100vh;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+}
