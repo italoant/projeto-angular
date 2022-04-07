@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
 import { authService } from 'src/app/shared/authService';
+import { PesquisaService } from 'src/app/shared/shared.service';
+
 
 
 @Component({
@@ -10,46 +15,49 @@ import { authService } from 'src/app/shared/authService';
 })
 export class LoginComponent implements OnInit {
 
-  userlocal: string  = localStorage.getItem('user') //capturar cadastro
-  senhalocal: any  = localStorage.getItem('senha')  //capturar cadastro
-
-  user: string //capturar valor do input
-  senha: any//capturar valor do input
-
-  checkUser: string //variaveis que vao receber o valor do imput e comparar com localstorage
-  checkSenha: any //variaveis que vao receber o valor do imput e comparar com localstorage
-
-  mensagem: string //mensagem de erro user
-
+  formulario: FormGroup;
 
   userLogedOn: boolean = false
+
+  mensagem: string;
 
 
   constructor(
     private router: Router,
-    private logado: authService
+    private logado: authService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    
+    this.formulario = this.formBuilder.group({
+      user: [null, Validators.required],
+      pass: [null, Validators.required],
+    })
+
   }
 
-  login(){
-    this.checkUser = this.user
-    this.checkSenha = this.senha
-    if(this.checkUser !== this.userlocal && this.checkSenha !== this.senhalocal){
-      this.mensagem = 'usuario e senha incorreto' 
-    } else if (this.checkUser !== this.userlocal && this.checkSenha === this.senhalocal) {
-      this.mensagem = 'usuario incorreto'
-    } else if (this.checkUser === this.userlocal && this.checkSenha !== this.senhalocal) {
-      this.mensagem = 'senha incorreta'
-    } else{
+  verificarMudancas(campo: string) {
+    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched
+  }
+
+  aplicarCss(campo: string) {
+    return {
+      'has-error': this.verificarMudancas(campo),
+      'has-feedback': this.verificarMudancas(campo)
+    }
+  }
+
+  onSubmit() {
+    if (this.formulario.value.user === localStorage.getItem('user') && this.formulario.value.pass === localStorage.getItem('pass')) {
       localStorage.setItem('logado', 'true')
-      this.logado.usuarioLogado.subscribe(
-        logou => this.userLogedOn = logou
-      )
-      this.logado.logado()
+          this.logado.usuarioLogado.subscribe(
+            logou => this.userLogedOn = logou
+          )
+          this.logado.logado()
       this.router.navigate([''])
+    } else {
+      this.mensagem = 'Usuario ou Senha invalidos'
+      this.formulario.reset()
     }
   }
 

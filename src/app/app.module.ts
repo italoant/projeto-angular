@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -23,6 +23,7 @@ import { NotFoundComponent } from './Pages/not-found/not-found.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,14 @@ import { NotFoundComponent } from './Pages/not-found/not-found.component';
     CadastroModule,
     AppRoutingModule
   ],
-  providers: [authGuard],
+  providers: [
+    authGuard,
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    }
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,3 +2,31 @@
     display: flex;
     justify-content: space-between;
 }
+
+.offcanvas-body {
+    background-color: #ee6e73;
+    opacity: 80%;
+}
+
+.dropdown-menu{
+    background-color: #ee6e73;
+    opacity: 80%;
+    border: none;
+}
+#mobileMenu{
+    display: none;
+}
+
+a:hover{
+    color: black;
+}
+
+
+@media(max-width: 1000px){
+    #menu{
+        display: none;
+    }
+    #mobileMenu{
+        display: block;
+    }
+}

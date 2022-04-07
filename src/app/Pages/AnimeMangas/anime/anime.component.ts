@@ -21,9 +21,8 @@ export class AnimeComponent implements OnInit {
 
   searchAnime: string = ''
 
-  resultado: string = ''
+  titulo: any = 'Animes populares'
 
-  populares: string = ''
 
   ngOnInit(): void {
     this.subs = this.service.listPequisa()
@@ -32,22 +31,6 @@ export class AnimeComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
-  }
-
-
-  buscar(){
-    if(this.searchAnime.length !== 0){
-      this.service.buscar(this.searchAnime)
-      .subscribe(resp => this.returnPesquisa = resp.data)
-       this.resultado = 'você está pesquisando por: ' + this.searchAnime
-       this.populares = ''
-    } else{
-      this.resultado = ''
-      this.populares = 'animes populares'
-      this.returnPesquisa = this.respPesquisa
-      
-    }
-   
   }
 
   showA(){
@@ -60,8 +43,20 @@ export class AnimeComponent implements OnInit {
   }
 
   detalhesA(e){
-    localStorage.setItem('anime', JSON.stringify(e))
+    localStorage.setItem('detalhes', JSON.stringify(e))
   }
 
+
+  consultarAnime(){
+    if(this.searchAnime.length !== 0){
+      this.service.buscar(this.searchAnime)
+      .subscribe(resp => this.returnPesquisa = resp.data)
+        this.titulo = 'você está pesquisando por: ' + this.searchAnime
+        return this.titulo
+    }
+      this.titulo = 'Animes populares'
+      this.returnPesquisa = this.respPesquisa
+      return this.titulo
+  }
 
 }

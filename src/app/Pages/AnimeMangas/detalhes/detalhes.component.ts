@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalhesComponent implements OnInit {
 
-  animeLocal = localStorage.getItem('anime');
+  animeLocal = localStorage.getItem('detalhes');
   respostaClick = JSON.parse(this.animeLocal);
 
-  mangaLocal = localStorage.getItem('manga');
-  // respostaClick = JSON.parse(this.mangaLocal);
 
 
 
@@ -24,7 +22,6 @@ export class DetalhesComponent implements OnInit {
   }
 
   deleteInfo(){
-    localStorage.removeItem('anime')
-    localStorage.removeItem('manga')
+    localStorage.removeItem('detalhes')
   }
 }

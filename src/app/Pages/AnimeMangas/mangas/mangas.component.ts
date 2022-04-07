@@ -20,6 +20,8 @@ export class MangasComponent implements OnInit {
 
   populares: string = ''
 
+  titulo: any;
+
   ngOnInit(): void {
     this.service.listPequisaM()
     .subscribe(resp => this.respPesquisa = resp.data);
@@ -50,7 +52,19 @@ export class MangasComponent implements OnInit {
   }
 
   detalhesM(e){
-    localStorage.setItem('manga', JSON.stringify(e))
+    localStorage.setItem('detalhes', JSON.stringify(e))
+  }
+
+  consultarManga(){
+    if(this.searchManga.length !== 0){
+      this.service.buscarManga(this.searchManga)
+      .subscribe(resp => this.returnPesquisaManga = resp.data)
+        this.titulo = 'você está pesquisando por: ' + this.searchManga
+        return this.titulo
+    }
+      this.titulo = 'Animes populares'
+      this.returnPesquisaManga = this.respPesquisa
+      return this.titulo
   }
 
 

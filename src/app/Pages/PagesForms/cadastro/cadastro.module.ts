@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 
 import { PagesFormsRoutingModule } from '../pages-forms-routing.module';
 import { CadastroComponent } from './cadastro.component';
+import { CampoErrorComponent } from '../campo-error/campo-error.component';
+import { CampoErrorModule } from '../campo-error/campo-error.module';
 
 
 
@@ -16,6 +18,7 @@ import { CadastroComponent } from './cadastro.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    CampoErrorModule,
     PagesFormsRoutingModule
   ]
 })

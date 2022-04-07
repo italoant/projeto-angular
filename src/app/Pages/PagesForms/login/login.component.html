@@ -1,24 +1,35 @@
-<form #form="ngForm" class="contForm">
-    <p>{{mensagem}}</p>
-    <div>
-        <div class="row">
-            <div class="input-field col s3">
-                <input placeholder="Usuario" id="usuario" name="nome"  type="text" class="validate" [(ngModel)]="user">
-            </div>
+
+<form class="contForm" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+    <h5> Login </h5>
+
+    <div class="row" [ngClass]="aplicarCss('user')">
+        <div class="input-field col s3">
+            <input placeholder="Nome" formControlName="user" id="user" type="text" class="validate">
         </div>
+
+        <app-campo-error class="error" [error]="verificarMudancas('user')" mensagem="Usuario invalido">
+
+        </app-campo-error>
     </div>
 
-    <div>
-        <div class="row">
-            <div class="input-field col s3">
-                <input placeholder="Senha" id="senha" type="text" class="validate" [(ngModel)]="senha">
-            </div>
+    <div class="row" [ngClass]="aplicarCss('pass')">
+        <div class="input-field col s3">
+            <input placeholder="Senha" formControlName="pass" id="pass" type="password" class="validate">
         </div>
+
+        <app-campo-error class="error" [error]="verificarMudancas('pass')" mensagem="Senha invalida">
+
+        </app-campo-error>
     </div>
+
     <div class="contButton">
-        <a (click)="login()" class="waves-effect waves-light btn-small">Entrar</a>
+        <button type="submit" class="waves-effect waves-light btn-small">Entrar</button>
         <a routerLink="/cadastro" class="waves-effect waves-light btn-small">Cadastre-se</a>
     </div>
     <br>
     <p id="esqueceu-senha">Esqueceu a senha? <a id="contato">Clique aqui.</a></p>
+
+    <h5>{{mensagem}}</h5>
+
 </form>

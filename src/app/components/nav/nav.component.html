@@ -1,19 +1,88 @@
-<nav>
+<nav id="menu">
   <div class="nav-wrapper">
-    <!-- <div><a href="#" class="brand-logo right">Logo</a></div> -->
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li ><a routerLink="">home</a></li>
-      <li ><a #anime routerLink="/anime">anime</a></li>
-      <li ><a #manga routerLink="/manga">manga</a></li>
+    <!-- <a href="#!" class="brand-logo">Logo</a> -->
+    <ul class="right hide-on-med-and-down">
+      <li><a class="active" routerLink="">Home</a></li>
+      <li><a #anime routerLink="/anime">anime</a></li>
+      <li><a #manga routerLink="/manga">manga</a></li>
       <li><a routerLink="/noticias">noticias</a></li>
     </ul>
+
+
+
     <ul class="left hide-on-med-and-down" *ngIf="trocarNav === false">
       <li><a routerLink="/login">Login</a></li>
       <li><a routerLink="/cadastro">Cadastro</a></li>
     </ul>
     <ul class="left hide-on-med-and-down" *ngIf="trocarNav === true">
-      <li><a >Perfil</a></li>
+      <li><a>Perfil</a></li>
       <li><a (click)="deslog()">Sair</a></li>
     </ul>
+  </div>
+</nav>
+
+<nav id="mobileMenu" class="navbar navbar-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" #anime routerLink="/anime">Anime</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" #anime routerLink="/manga">Manga</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" #anime routerLink="/noticias">Noticias</a>
+          </li>
+
+          <li class="nav-item dropdown" *ngIf="trocarNav === false">
+            <a class="nav-link dropdown-toggle" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Login/Cadastro
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li>
+                <a class="dropdown-item" routerLink="/login">Login</a>
+              </li>
+              <li><a class="dropdown-item" routerLink="/cadastro">cadastro</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown" *ngIf="trocarNav === true">
+            <a class="nav-link dropdown-toggle" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Perfil/Sair
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li>
+                <a class="dropdown-item">Perfil</a>
+              </li>
+              <li><a class="dropdown-item" (click)="deslog()">Sair</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>

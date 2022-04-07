@@ -1,11 +1,9 @@
 <div class="container">
     <div class="inputCont">
-        <input placeholder="Dragon-ball" class="input" type="text" [(ngModel)]="searchManga">
-        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="buscarManga()">Pesquisar
-            <i class="material-icons right">send</i>
-        </button>
+        <input placeholder="Dragon-ball" (change)="consultarManga()"
+        class="input" type="text" [(ngModel)]="searchManga">
     </div>
-    <h2>{{ resultado ? resultado : populares }}</h2>
+    <h2>{{ consultarManga() }}</h2>
     <div class="resp" *ngIf="showA()">
         <div class="contResp" *ngFor="let resp of returnPesquisaManga">
             <div routerLink="/detalhes" (click)="detalhesM(resp)">

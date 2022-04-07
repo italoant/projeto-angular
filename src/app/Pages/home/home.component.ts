@@ -33,13 +33,9 @@ export class HomeComponent implements OnInit {
       return true
     }
   }
-  detalhesAnime(e){
-    localStorage.setItem('anime', JSON.stringify(e))
+  detalhes(e){
+    localStorage.setItem('detalhes', JSON.stringify(e))
 
-  }
-
-  detalhesManga(e){
-    localStorage.setItem('manga',  JSON.stringify(e))
   }
 
 }

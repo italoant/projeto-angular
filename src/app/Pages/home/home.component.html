@@ -3,7 +3,7 @@
     <h1> Animes </h1>
     <div class="resp" *ngIf="show()">
         <div class="contResp" *ngFor="let resp of anime">
-            <div routerLink="/detalhes" (click)="detalhesAnime(resp)">
+            <div routerLink="/detalhes" (click)="detalhes(resp)">
                 <img src="{{resp.attributes.posterImage.small}}">
                 <p>{{resp.attributes.titles.en_jp || resp.attributes.titles.en || resp.attributes.titles.en_us}}</p>
             </div>
@@ -12,7 +12,7 @@
     <h1> Manga </h1>
     <div class="resp" *ngIf="show()">
         <div class="contResp" *ngFor="let resp of manga">
-            <div routerLink="/detalhes" (click)="detalhesManga(resp)">
+            <div routerLink="/detalhes" (click)="detalhes(resp)">
                 <img src="{{resp.attributes.posterImage.small}}">
                 <p>{{resp.attributes.titles.en_jp || resp.attributes.titles.en || resp.attributes.titles.en_us}}</p>
             </div>

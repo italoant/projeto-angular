@@ -1,11 +1,11 @@
 <div class="ContPrincipal">
     <div>
-        <img class="banner" src={{respostaClick.attributes.coverImage?.small}} />
-        <div class="voltar" routerLink="/anime" (click)="deleteInfo()">Voltar</div>
+        <img class="banner" src={{respostaClick?.attributes.coverImage?.small}} />
+        <button class="voltar" routerLink="/anime" (click)="deleteInfo()">Voltar</button>
     </div>
     <div class="infosPages">
         <div class="contImg">
-            <img class="card_image" src={{respostaClick.attributes.posterImage.small}} />
+            <img class="card_image" src="{{respostaClick.attributes.posterImage.small}}" />
         </div>
         <div class="detalhesClick">
             <h1>{{respostaClick.attributes.titles.en_jp || respostaClick.attributes.titles.en ||

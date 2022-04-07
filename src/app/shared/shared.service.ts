@@ -16,6 +16,8 @@ export class PesquisaService {
 
   pagePesquisa = new EventEmitter();
 
+  trocarNav: any = new EventEmitter()
+
   popularA: string = 'anime?sort=-popularityRank';
 
   popularM: string = 'manga?sort=-popularityRank';
