@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MangasComponent } from './mangas.component';
 import {  routingTelasModule } from '../routing.animeMangas.module';
-import { PesquisaService } from 'src/app/shared/shared.service';
+import { PesquisaService } from 'src/app/shared/pesquisa.service';
 
 
 

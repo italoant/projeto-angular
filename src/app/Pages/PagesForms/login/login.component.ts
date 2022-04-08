@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 import { authService } from 'src/app/shared/authService';
-import { PesquisaService } from 'src/app/shared/shared.service';
+import { PesquisaService } from 'src/app/shared/pesquisa.service';
 
 
 

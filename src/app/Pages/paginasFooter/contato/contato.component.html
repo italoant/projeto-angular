@@ -1,0 +1,44 @@
+<div>
+    <h1> Entre em contato </h1>
+    <div>
+        <h4> Preencha os campos deste formulário para entrar em contato com nossa equipe de desenvolvimento Front-End do
+            site PanimeE. </h4>
+        <p></p>
+        <div class="campos-form">
+            <input type="text" id="nome" placeholder="Ex.: Naruto Uzumaki" />
+        </div>
+        <div class="campos-form">
+            <input type="email" placeholder="Email@email.com" id="email" />
+        </div>
+        <div class="campos-form">
+            <label >Selecione um tema:</label>
+            <select>
+                <option value="" selected class="opcao">-</option>
+                <optgroup label="Senha:" class="opcao">
+                    <option value="esqueceuSenha" class="opcao">Esqueceu a senha</option>
+                </optgroup>
+                <optgroup label="Gerenciamento de conta:" class="opcao">
+                    <option value="gerenciamento" class="opcao">Solicitação de dados, recuperar conta e exclusão de
+                        conta</option>
+                </optgroup>
+                <optgroup label="Problemas técnicos:" class="opcao">
+                    <option value="problemasTecnicos" class="opcao">Lag, fechamento</option>
+                </optgroup>
+                <optgroup label="Outros:" class="opcao">
+                    <option value="outros" class="opcao">Outros temas</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="campos-form">
+            <label>Comentário: </label>
+
+
+            <textarea name="comentario" id="comentario" className="coments"
+                placeholder="Nos informe o motivo do contato..." cols="30" rows="5" className="comentario">
+                        </textarea>
+
+        </div>
+        <Button color="#FE6688" type="button"> Cancelar </Button>
+        <Button color="#F16EA5"> Enviar</Button>
+    </div>
+</div>

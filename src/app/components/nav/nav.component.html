@@ -16,7 +16,7 @@
       <li><a routerLink="/cadastro">Cadastro</a></li>
     </ul>
     <ul class="left hide-on-med-and-down" *ngIf="trocarNav === true">
-      <li><a>Perfil</a></li>
+      <li><a routerLink="/perfil">Perfil</a></li>
       <li><a (click)="deslog()">Sair</a></li>
     </ul>
   </div>
@@ -74,7 +74,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
               <li>
-                <a class="dropdown-item">Perfil</a>
+                <a routerLink="/perfil" class="dropdown-item">Perfil</a>
               </li>
               <li><a class="dropdown-item" (click)="deslog()">Sair</a></li>
               <li>

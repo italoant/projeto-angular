@@ -1,0 +1,18 @@
+<div class="container" >
+    <div id='container-dois'>
+        <div id='esquerda'>
+            <img src="https://images.tcdn.com.br/img/img_prod/697730/adesivo_lateral_vidro_caminhao_carro_decorativo_pantera_cor_de_rosa_1147486528_1_6704304bea8d50ab62a3eef851fc63ea.jpg" alt=""/>
+            <input placeholder="Envie a URL da sua imagem"  type="text"/>
+            <button class="botaoEnviar">enviar</button>
+        </div>
+        <div id='direita'>
+            <h3></h3>
+            <p><span>Usuário: @{{ usuario }}</span></p>
+            <p><span>Email: {{ email }}</span></p>
+            <p><span>Data de Nascimento: {{ data  }}</span></p>
+            <div id="butao_delete_account">
+                <a><button (click)="deleteAcc()" >Excluir Conta</button></a>
+            </div>
+        </div>
+    </div>
+</div>

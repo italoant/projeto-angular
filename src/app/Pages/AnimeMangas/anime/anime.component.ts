@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { PesquisaService } from 'src/app/shared/shared.service';
+import { PesquisaService } from 'src/app/shared/pesquisa.service';
 
 @Component({
   selector: 'app-anime',

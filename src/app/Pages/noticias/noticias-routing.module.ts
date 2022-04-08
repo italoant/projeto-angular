@@ -1,5 +1,4 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -14,9 +13,7 @@ export const routing: ModuleWithProviders<any> = RouterModule.forChild(appRoutes
 
 
 @NgModule({
-  declarations: [
-
-  ],
+  declarations: [],
   imports: [
     RouterModule.forChild(appRoutesNoticias)
   ],

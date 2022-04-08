@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PesquisaService } from 'src/app/shared/shared.service';
+import { PesquisaService } from 'src/app/shared/pesquisa.service';
 import { LoginComponent } from '../PagesForms/login/login.component';
 
 @Component({
