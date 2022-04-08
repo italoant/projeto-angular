@@ -1,1 +1,10 @@
-
+.page-footer{
+    position: inherit;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-copyright{
+    text-align: center;
+}

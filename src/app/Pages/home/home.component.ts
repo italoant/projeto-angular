@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PesquisaService } from 'src/app/shared/shared.service';
+import { LoginComponent } from '../PagesForms/login/login.component';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   manga = Array();
 
   loading: boolean = false
+
   
 
   
