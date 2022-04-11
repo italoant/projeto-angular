@@ -7,7 +7,7 @@
             <input placeholder="Nome" formControlName="nome" id="nome" type="text" class="validate">
         </div>
 
-        <app-campo-error [error]="verificarMudancas('nome')" mensagem="Nome invalido">
+        <app-campo-error class="error" [error]="verificarMudancas('nome')" mensagem="Nome invalido">
 
         </app-campo-error>
     </div>
@@ -17,7 +17,7 @@
             <input placeholder="Usuario" formControlName="user" id="usuario" type="text" class="validate">
         </div>
 
-        <app-campo-error [error]="verificarMudancas('user')" mensagem="usuario invalido">
+        <app-campo-error class="error" [error]="verificarMudancas('user')" mensagem="usuario invalido">
 
         </app-campo-error>
     </div>
@@ -27,7 +27,7 @@
             <input placeholder="Email" formControlName="email" id="email" class="validate">
         </div>
 
-        <app-campo-error [error]="verificarMudancas('email')" mensagem="Email invalido">
+        <app-campo-error class="error" [error]="verificarMudancas('email')" mensagem="Email invalido">
 
         </app-campo-error>
     </div>
@@ -37,7 +37,7 @@
             <input placeholder="Senha" formControlName="pass" id="Senha" type="password" class="validate">
         </div>
 
-        <app-campo-error [error]="verificarMudancas('pass')" mensagem="Senha invalido">
+        <app-campo-error class="error" [error]="verificarMudancas('pass')" mensagem="Senha invalida">
 
         </app-campo-error>
     </div>
@@ -51,8 +51,8 @@
 
 
     <div class="contButton">
-        <button type="submit" class="waves-effect waves-light btn-small">Cadastrar</button>
-        <a (click)="limpar()" class="waves-effect waves-light btn-small">Cancelar</a>
+        <button type="submit" id="btn1" class="waves-effect waves-light btn-small">Cadastrar</button>
+        <a (click)="limpar()" id="btn2" class="waves-effect waves-light btn-small">Cancelar</a>
     </div>
 
 </form>

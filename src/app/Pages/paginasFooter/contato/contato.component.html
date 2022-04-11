@@ -1,8 +1,8 @@
-<div>
-    <h1> Entre em contato </h1>
+<div class="container">
+    <h2> Entre em contato </h2>
     <div>
-        <h4> Preencha os campos deste formulário para entrar em contato com nossa equipe de desenvolvimento Front-End do
-            site PanimeE. </h4>
+        <h5> Preencha os campos deste formulário para entrar em contato com nossa equipe de desenvolvimento Front-End do
+            site PanimeE. </h5>
         <p></p>
         <div class="campos-form">
             <input type="text" id="nome" placeholder="Ex.: Naruto Uzumaki" />
@@ -33,12 +33,13 @@
             <label>Comentário: </label>
 
 
-            <textarea name="comentario" id="comentario" className="coments"
-                placeholder="Nos informe o motivo do contato..." cols="30" rows="5" className="comentario">
-                        </textarea>
+            <textarea name="comentario" id="comentario" placeholder="Nos informe o motivo do contato..." cols="30" rows="5">
+            </textarea>
 
         </div>
-        <Button color="#FE6688" type="button"> Cancelar </Button>
-        <Button color="#F16EA5"> Enviar</Button>
+        <div class="buttonCont">
+            <Button class="waves-effect waves-light btn-small" id="enviar" color="#F16EA5"> Enviar</Button>
+            <Button class="waves-effect waves-light btn-small" id="cancelar" color="#FE6688" type="button"> Cancelar </Button>
+        </div>
     </div>
 </div>

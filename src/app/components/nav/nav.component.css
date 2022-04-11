@@ -17,6 +17,11 @@
     display: none;
 }
 
+#menu{
+    background-color: #FE6688;
+    opacity: 80%;
+}
+
 a:hover{
     color: black;
 }

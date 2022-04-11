@@ -54,7 +54,7 @@ export class CadastroComponent implements OnInit {
     if(this.formulario.value.nome && this.formulario.value.user &&
       this.formulario.value.email && this.formulario.value.pass &&
       this.formulario.value.date !== null)
-      this.router.navigate([''])
+      this.router.navigate(['/login'])
   }
 
 

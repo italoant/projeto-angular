@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 import { authService } from 'src/app/shared/authService';
-import { PesquisaService } from 'src/app/shared/pesquisa.service';
+
 
 
 
@@ -16,8 +16,6 @@ import { PesquisaService } from 'src/app/shared/pesquisa.service';
 export class LoginComponent implements OnInit {
 
   formulario: FormGroup;
-
-  userLogedOn: boolean = false
 
   mensagem: string;
 
@@ -33,7 +31,6 @@ export class LoginComponent implements OnInit {
       user: [null, Validators.required],
       pass: [null, Validators.required],
     })
-
   }
 
   verificarMudancas(campo: string) {
@@ -48,15 +45,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.formulario.value.user === localStorage.getItem('user') && this.formulario.value.pass === localStorage.getItem('pass')) {
+    if (localStorage.getItem('user') && localStorage.getItem('pass') && this.formulario.value.user === localStorage.getItem('user') && this.formulario.value.pass === localStorage.getItem('pass')) {
       localStorage.setItem('logado', 'true')
-          this.logado.usuarioLogado.subscribe(
-            logou => this.userLogedOn = logou
-          )
-          this.logado.logado()
+      localStorage.setItem('imagem', 
+      'https://images.tcdn.com.br/img/img_prod/697730/adesivo_lateral_vidro_caminhao_carro_decorativo_pantera_cor_de_rosa_1147486528_1_6704304bea8d50ab62a3eef851fc63ea.jpg')
+      
+      this.logado.userOn = localStorage.getItem('logado')
+      this.logado.usuarioLogado.emit(true)
       this.router.navigate([''])
     } else {
-      this.mensagem = 'Usuario ou Senha invalidos'
+      this.mensagem = 'Usuario ou Senha invalido'
       this.formulario.reset()
     }
   }

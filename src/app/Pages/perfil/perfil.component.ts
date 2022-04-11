@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { authService } from 'src/app/shared/authService';
 
 @Component({
   selector: 'app-perfil',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private serviceAuth: authService,
+    private logado: authService
+  ) { }
 
   usuario: string;
 
@@ -15,11 +21,18 @@ export class PerfilComponent implements OnInit {
 
   data: any;
 
+  imagem: string ;
+
 
   ngOnInit(): void {
     this.usuario = localStorage.getItem('user')
     this.email = localStorage.getItem('email')
     this.data = localStorage.getItem('date')
+    this.imagem = localStorage.getItem('imagem')
+  }
+
+  trocarImg(){
+
   }
 
   deleteAcc(){
@@ -28,7 +41,10 @@ export class PerfilComponent implements OnInit {
     localStorage.removeItem('date');
     localStorage.removeItem('nome');
     localStorage.removeItem('pass');
-    localStorage.setItem('logado', 'false')
+    localStorage.removeItem('logado')
+    // this.logado.logado()
+    this.serviceAuth.usuarioLogado.emit(false)
+    this.router.navigate([''])
   }
 
 }

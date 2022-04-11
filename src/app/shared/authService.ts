@@ -6,18 +6,20 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class authService {
 
-  userOn = localStorage.getItem('logado')
+  userOn: any;
 
   usuarioLogado = new EventEmitter();
 
   
   constructor() { }
   
-  logado(){
-    if(this.userOn !== ''){
-      this.usuarioLogado.emit(true)
-    } else{
-      this.usuarioLogado.emit(false)
-    }
-  }
+  
+  // logado(){
+  //   if(this.userOn === '' || this.userOn === null || this.userOn === undefined){
+  //     this.usuarioLogado.emit(false)
+
+  //   } 
+  //     this.usuarioLogado.emit(true)
+
+  // }
 }

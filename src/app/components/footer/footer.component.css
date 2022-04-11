@@ -1,5 +1,7 @@
 .page-footer{
     position: inherit;
+    background-color: #FE6688;
+    opacity: 80%;
 }
 ul{
     display: flex;

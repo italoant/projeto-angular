@@ -29,14 +29,29 @@
 .contButton{
     display: flex;
     justify-content: space-around;
-    width: 30vw;
+    width: 29%
 }
 
 .ng-invalid.ng-touched:not(form){
     border-bottom: solid 1px red;
     box-shadow: red;
 }
+#btn1{
+    background-color: #F16EA5;
 
+
+}
+#btn2{
+    background-color: #FE6688;
+
+}
 .error{
     text-align: center;
+}
+#esqueceu-senha > a {
+    color: blue;
+}
+
+#esqueceu-senha > a:hover{
+    color: #FE6688;
 }
