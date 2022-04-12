@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import * as EventEmitter from 'events';
 
 
 @Injectable({
@@ -10,51 +9,30 @@ import * as EventEmitter from 'events';
 export class PesquisaService {
 
 
-  apiA: string = 'https://kitsu.io/api/edge/anime'
+  api: string = 'https://kitsu.io/api/edge/'
 
-  apiM: string = 'https://kitsu.io/api/edge/manga'
+  popular: string = '?sort=-popularityRank';
 
-  pagePesquisa = new EventEmitter();
+  pesquisa: string = `https://kitsu.io/api/edge/`
 
-  trocarNav: any = new EventEmitter()
+  paginacao: string = '?page[limit]=6&page[offset]='
 
-  popularA: string = 'anime?sort=-popularityRank';
+  pagina: number = 0;
 
-  popularM: string = 'manga?sort=-popularityRank';
-  
 
-  search: any = ''
-
-  private readonly Pesquisa = `https://kitsu.io/api/edge/`
-
-  
-  
 
   constructor(private http: HttpClient) { }
 
-  list(): Observable<any>{
-    return this.http.get(this.apiA);
+  list(page): Observable<any>{
+    return this.http.get(this.api + page + this.paginacao + this.pagina);
   }
 
-  listM(): Observable<any> {
-    return this.http.get(this.apiM);
-  }
-
-
-  listPequisa(): Observable<any>{
-    return this.http.get(this.Pesquisa + this.popularA)
-  }
-
-  listPequisaM(): Observable<any>{
-    return this.http.get(this.Pesquisa + this.popularM)
-  }
-
-  buscarManga(search): Observable<any>{
-    return this.http.get(this.apiM + '?filter[text]=' + search)
+  listPequisa(page): Observable<any>{
+    return this.http.get(this.pesquisa + page + this.popular)
   }
 
 
-  buscar(search): Observable<any>{
-    return this.http.get(this.apiA + '?filter[text]=' +  search)
+  buscar(search, pagina): Observable<any>{
+    return this.http.get(this.api + pagina + '?filter[text]=' +  search)
   }
 }

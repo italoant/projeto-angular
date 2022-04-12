@@ -13,3 +13,32 @@ body {
 .selector-for-some-widget {
     box-sizing: content-box;
 }
+
+.loading {
+    border: none;
+    width: 150px;
+    box-shadow: 0 0 0 0;
+    animation: loading 2s linear infinite;
+}
+
+.bg-loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes loading{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -21,7 +21,7 @@ export class PerfilComponent implements OnInit {
 
   data: any;
 
-  imagem: string ;
+  imagem: any ;
 
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class PerfilComponent implements OnInit {
   }
 
   trocarImg(){
-
+    console.log(this.imagem)
   }
 
   deleteAcc(){

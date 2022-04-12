@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class DetalhesComponent implements OnInit {
 
   animeLocal = localStorage.getItem('detalhes');
+
+  imagemNaoLocalizada: string = '/assets/imagem_nao_disponivel.png'
+
   respostaClick = JSON.parse(this.animeLocal);
 
 
@@ -20,6 +23,15 @@ export class DetalhesComponent implements OnInit {
   ngOnInit(): void {
    
   }
+
+  imagemBanner(){
+    if(this.respostaClick.attributes.coverImage == null || this.respostaClick.attributes.coverImage.small == null){
+      return this.imagemNaoLocalizada
+    } else {
+      return this.respostaClick.attributes.coverImage.small
+    }
+  }
+    
 
   deleteInfo(){
     localStorage.removeItem('detalhes')

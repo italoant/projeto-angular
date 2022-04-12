@@ -16,36 +16,33 @@ export class MangasComponent implements OnInit {
 
   searchManga: string = ''
 
-  resultado: string = ''
-
-  populares: string = ''
-
-  titulo: any;
+  titulo: any = 'Mangas Populares';
 
   ngOnInit(): void {
-    this.service.listPequisaM()
-    .subscribe(resp => this.respPesquisa = resp.data);
+    this.service.listPequisa('manga')
+    .subscribe(resp => {
+      setTimeout(() => {this.respPesquisa = resp.data}, 2000)
+    });
   }
 
 
-  buscarManga(){
-    if(this.searchManga.length !== 0){
-      this.service.buscarManga(this.searchManga)
-      .subscribe(resp => this.returnPesquisaManga = resp.data)
-       this.resultado = 'você está pesquisando por: ' + this.searchManga
-       this.populares = ''
-    } else{
-      this.returnPesquisaManga = this.respPesquisa
-      this.populares = 'mangas populares'
-      this.resultado = ''
+  loadingFundo(){
+    if(this.returnPesquisaManga.length === 0){
+      return 'bg-loading'
     }
-   
+      return null
   }
+  loadingImg(){
+    if(this.returnPesquisaManga.length === 0){
+      return '/assets/loading.png'
+    }
+      return null
+  }
+
 
   showA(){
     if(this.returnPesquisaManga.length === 0){
-      this.returnPesquisaManga = this.respPesquisa
-      return this.returnPesquisaManga
+      return null
     } else{
       return this.returnPesquisaManga
     }
@@ -55,14 +52,14 @@ export class MangasComponent implements OnInit {
     localStorage.setItem('detalhes', JSON.stringify(e))
   }
 
-  consultarManga(){
+  consultar(){
     if(this.searchManga.length !== 0){
-      this.service.buscarManga(this.searchManga)
+      this.service.buscar(this.searchManga, 'manga')
       .subscribe(resp => this.returnPesquisaManga = resp.data)
         this.titulo = 'você está pesquisando por: ' + this.searchManga
         return this.titulo
     }
-      this.titulo = 'Animes populares'
+      this.titulo = 'Mangas populares'
       this.returnPesquisaManga = this.respPesquisa
       return this.titulo
   }

@@ -2,8 +2,8 @@
     <div id='container-dois'>
         <div id='esquerda'>
             <img src={{imagem}} alt=""/>
-            <input placeholder="Envie a URL da sua imagem"  type="text"/>
-            <button class="botaoEnviar" (click)="trocarImg()">enviar</button>
+            <input placeholder="Envie a URL da sua imagem"  [(ngModel)]="imagem" type="text"/>
+            <!-- <button class="botaoEnviar" (click)="trocarImg()">enviar</button> -->
         </div>
         <div id='direita'>
             <h3></h3>

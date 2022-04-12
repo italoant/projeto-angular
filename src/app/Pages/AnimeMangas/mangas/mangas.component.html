@@ -1,13 +1,14 @@
 <div class="container">
     <div class="inputCont">
-        <input placeholder="Dragon-ball" (change)="consultarManga()"
+        <input placeholder="Dragon-ball" (change)="consultar()"
         class="input" type="text" [(ngModel)]="searchManga">
     </div>
-    <h2>{{ consultarManga() }}</h2>
-    <div class="resp" *ngIf="showA()">
+    <h2>{{ consultar() }}</h2>
+    <div class="resp">
+        <div class="{{ loadingFundo() }}"><img class="loading" src={{loadingImg()}}></div>
         <div class="contResp" *ngFor="let resp of returnPesquisaManga">
             <div routerLink="/detalhes" (click)="detalhesM(resp)">
-                <a><img src="{{resp?.attributes?.posterImage?.small}}"></a>
+                <a><img id="imagemResp" src="{{resp?.attributes?.posterImage?.small}}"></a>
             </div>
         </div>
     </div>

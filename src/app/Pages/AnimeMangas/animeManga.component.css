@@ -31,13 +31,14 @@
     align-items: center;
     max-height: 40vh;
 }
-img {
+
+#imagemResp {
     width: 170px;
     margin: .8rem;
     border-radius: 1rem;
     transition: .6s;
     box-shadow: 3px 3px 10px pink;              
 }
-img:hover {
+#imagemResp:hover {
     transform: scale(1.05);
 }

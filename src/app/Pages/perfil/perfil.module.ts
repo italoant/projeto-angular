@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { PerfilComponent } from './perfil.component';
 import { PerfilRoutingModule } from './perfil-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,6 +14,7 @@ import { PerfilRoutingModule } from './perfil-routing.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     PerfilRoutingModule
   ]
 })

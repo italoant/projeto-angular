@@ -1,6 +1,8 @@
+import { localizedString } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { delay, Subscription } from 'rxjs';
 import { PesquisaService } from 'src/app/shared/pesquisa.service';
+
 
 @Component({
   selector: 'app-anime',
@@ -25,21 +27,36 @@ export class AnimeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.subs = this.service.listPequisa()
-    .subscribe(resp => this.respPesquisa = resp.data);
+    this.subs = this.service.listPequisa('anime')
+    .subscribe(resp => {
+      setTimeout(() => {this.respPesquisa = resp.data}, 2000)
+      });
+
   }
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
 
-  showA(){
+  loadingFundo(){
     if(this.returnPesquisa.length === 0){
-      this.returnPesquisa = this.respPesquisa
-      return this.returnPesquisa
-    } else{
-      return this.returnPesquisa
+      return 'bg-loading'
     }
+      return null
+  }
+  loadingImg(){
+    if(this.returnPesquisa.length === 0){
+      return '/assets/loading.png'
+    }
+      return null
+  }
+
+  showA(){
+    if(this.returnPesquisa.length != 0){
+      return this.returnPesquisa
+    } 
+      return null
+      
   }
 
   detalhesA(e){
@@ -47,9 +64,9 @@ export class AnimeComponent implements OnInit {
   }
 
 
-  consultarAnime(){
+  consultar(){
     if(this.searchAnime.length !== 0){
-      this.service.buscar(this.searchAnime)
+      this.service.buscar(this.searchAnime, 'anime')
       .subscribe(resp => this.returnPesquisa = resp.data)
         this.titulo = 'você está pesquisando por: ' + this.searchAnime
         return this.titulo

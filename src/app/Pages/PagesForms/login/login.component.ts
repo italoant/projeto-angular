@@ -45,12 +45,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (localStorage.getItem('user') && localStorage.getItem('pass') && this.formulario.value.user === localStorage.getItem('user') && this.formulario.value.pass === localStorage.getItem('pass')) {
+    if (this.formulario.valid) {
       localStorage.setItem('logado', 'true')
       localStorage.setItem('imagem', 
       'https://images.tcdn.com.br/img/img_prod/697730/adesivo_lateral_vidro_caminhao_carro_decorativo_pantera_cor_de_rosa_1147486528_1_6704304bea8d50ab62a3eef851fc63ea.jpg')
       
-      this.logado.userOn = localStorage.getItem('logado')
       this.logado.usuarioLogado.emit(true)
       this.router.navigate([''])
     } else {
