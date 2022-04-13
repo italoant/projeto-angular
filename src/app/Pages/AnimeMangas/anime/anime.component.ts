@@ -13,13 +13,11 @@ export class AnimeComponent implements OnInit {
 
   constructor(
     private service: PesquisaService
-    ){ }
+  ) { }
 
-  subs: Subscription
+  subs: Subscription;
 
   respPesquisa = Array();
-
-  returnPesquisa = Array();
 
   searchAnime: string = ''
 
@@ -28,8 +26,8 @@ export class AnimeComponent implements OnInit {
 
   ngOnInit(): void {
     this.subs = this.service.listPequisa('anime')
-    .subscribe(resp => {
-      setTimeout(() => {this.respPesquisa = resp.data}, 2000)
+      .subscribe(resp => {
+        setTimeout(() => { this.respPesquisa = resp.data }, 1000)
       });
 
   }
@@ -38,42 +36,54 @@ export class AnimeComponent implements OnInit {
     this.subs.unsubscribe();
   }
 
-  loadingFundo(){
-    if(this.returnPesquisa.length === 0){
+  loadingFundo() {
+    if (this.respPesquisa.length === 0) {
       return 'bg-loading'
     }
-      return null
+    return null
   }
-  loadingImg(){
-    if(this.returnPesquisa.length === 0){
+  loadingImg() {
+    if (this.respPesquisa.length === 0) {
       return '/assets/loading.png'
     }
-      return null
+    return null
   }
 
-  showA(){
-    if(this.returnPesquisa.length != 0){
-      return this.returnPesquisa
-    } 
-      return null
-      
+  show() {
+    if (this.respPesquisa.length != 0) {
+      return this.respPesquisa
+    }
+    return null
+
   }
 
-  detalhesA(e){
+  detalhesA(e) {
     localStorage.setItem('detalhes', JSON.stringify(e))
   }
 
 
-  consultar(){
-    if(this.searchAnime.length !== 0){
+
+
+  consultar() {
+    if (this.searchAnime.length != 0) {
       this.service.buscar(this.searchAnime, 'anime')
-      .subscribe(resp => this.returnPesquisa = resp.data)
-        this.titulo = 'você está pesquisando por: ' + this.searchAnime
-        return this.titulo
+        .subscribe(resp => {
+          setTimeout(() => { this.respPesquisa = resp.data }, 1200)
+        });
+    } else {
+      this.service.listPequisa('anime')
+        .subscribe(resp => {
+          setTimeout(() => { this.respPesquisa = resp.data }, 1200)
+        });
     }
-      this.titulo = 'Animes populares'
-      this.returnPesquisa = this.respPesquisa
-      return this.titulo
   }
 
+  mudarTitulo() {
+    if (this.searchAnime.length !== 0) {
+      this.titulo = 'você está pesquisando por: ' + this.searchAnime
+      return this.titulo
+    }
+    this.titulo = 'Animes populares'
+    return this.titulo
+  }
 }

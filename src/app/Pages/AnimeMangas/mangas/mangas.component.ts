@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { PesquisaService } from 'src/app/shared/pesquisa.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class MangasComponent implements OnInit {
 
   respPesquisa = Array();
 
-  returnPesquisaManga = Array();
+  subs: Subscription;
 
   searchManga: string = ''
 
@@ -20,49 +21,68 @@ export class MangasComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.listPequisa('manga')
-    .subscribe(resp => {
-      setTimeout(() => {this.respPesquisa = resp.data}, 2000)
-    });
+      .subscribe(resp => {
+        setTimeout(() => { this.respPesquisa = resp.data }, 1000)
+      });
+  }
+  
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
 
-  loadingFundo(){
-    if(this.returnPesquisaManga.length === 0){
+  loadingFundo() {
+    if (this.respPesquisa.length === 0) {
       return 'bg-loading'
     }
-      return null
+    return null
   }
-  loadingImg(){
-    if(this.returnPesquisaManga.length === 0){
+  loadingImg() {
+    if (this.respPesquisa.length === 0) {
       return '/assets/loading.png'
     }
-      return null
+    return null
   }
 
 
-  showA(){
-    if(this.returnPesquisaManga.length === 0){
+  show() {
+    if (this.respPesquisa.length != 0) {
+      return this.respPesquisa
+    } else {
       return null
-    } else{
-      return this.returnPesquisaManga
     }
   }
+  
 
-  detalhesM(e){
+  detalhesM(e) {
     localStorage.setItem('detalhes', JSON.stringify(e))
   }
 
-  consultar(){
-    if(this.searchManga.length !== 0){
+  consultar() {
+    if (this.searchManga.length != 0) {
       this.service.buscar(this.searchManga, 'manga')
-      .subscribe(resp => this.returnPesquisaManga = resp.data)
-        this.titulo = 'você está pesquisando por: ' + this.searchManga
-        return this.titulo
+      .subscribe(resp => {
+        setTimeout(() => { this.respPesquisa = resp.data }, 1200)
+      });
+    } else{
+      this.service.listPequisa('manga')
+      .subscribe(resp => {
+        setTimeout(() => { this.respPesquisa = resp.data }, 1200)
+      });
     }
-      this.titulo = 'Mangas populares'
-      this.returnPesquisaManga = this.respPesquisa
-      return this.titulo
+
   }
+
+  mudarTitulo() {
+    if (this.searchManga.length !== 0) {
+      this.titulo = 'você está pesquisando por: ' + this.searchManga
+      return this.titulo
+    }
+    this.titulo = 'Mangas populares'
+    return this.titulo
+  }
+
+
 
 
 }

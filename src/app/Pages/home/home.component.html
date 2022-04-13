@@ -1,4 +1,4 @@
-  <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         <img src="https://wallpapercave.com/wp/wp5702075.png" alt="...">
@@ -18,12 +18,12 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div> -->
+  </div>
 
 
-    <img class="teste" src="https://wallpapercave.com/wp/wp5702075.png" alt="...">
+    <!-- <img class="teste" src="https://wallpapercave.com/wp/wp5702075.png" alt="..."> -->
     <div class="{{ loadingFundo() }}"><img class="loading" src={{loadingImg()}}></div>
-    <h1> Animes </h1>
+    <h1> {{ loading == false ? null : 'Anime'}} </h1>
     <div class="resp" *ngIf="show()">
         <div class="contResp" *ngFor="let resp of anime">
             <div routerLink="/detalhes" (click)="detalhes(resp)">
@@ -36,7 +36,7 @@
           <button class="trocarPagina" (click)="nextPage()">Next</button>
       </div> 
     </div>
-    <h1> Manga </h1>
+    <h1> {{ loading == false ? null : 'Manga'}} </h1>
     <div class="resp" *ngIf="show()">
         <div class="contResp" *ngFor="let resp of manga">
             <div routerLink="/detalhes" (click)="detalhes(resp)">

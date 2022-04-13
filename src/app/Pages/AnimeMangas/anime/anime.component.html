@@ -1,11 +1,11 @@
 <div class="container">
     <div class="inputCont">
-        <input placeholder="Dragon-ball" class="input" type="text" (change)="consultar()" [(ngModel)]="searchAnime">
+        <input placeholder="Dragon-ball" class="input" type="text" (keyup)="consultar()" [(ngModel)]="searchAnime">
     </div>
-    <h2>{{ consultar() }}</h2>
+    <h2>{{mudarTitulo()}}</h2>
     <div class="resp">
         <div class="{{ loadingFundo() }}"><img class="loading" src={{loadingImg()}}></div>
-        <div class="contResp" *ngFor="let resp of showA()">
+        <div class="contResp" *ngFor="let resp of show()">
             <div routerLink="/detalhes" [queryParams]="{anime: resp.id}" (click)="detalhesA(resp)">
                 <a><img id="imagemResp" src="{{resp?.attributes?.posterImage?.small}}"></a>
             </div>

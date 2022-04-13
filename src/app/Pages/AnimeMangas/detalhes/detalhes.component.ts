@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalhesComponent implements OnInit {
 
-  animeLocal = localStorage.getItem('detalhes');
+  detalhesLocal = localStorage.getItem('detalhes');
 
   imagemNaoLocalizada: string = '/assets/imagem_nao_disponivel.png'
 
-  respostaClick = JSON.parse(this.animeLocal);
+  respostaClick = JSON.parse(this.detalhesLocal);
 
 
 
@@ -20,8 +20,7 @@ export class DetalhesComponent implements OnInit {
 
 
   
-  ngOnInit(): void {
-   
+  ngOnInit(): void {   
   }
 
   imagemBanner(){
