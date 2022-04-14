@@ -24,20 +24,20 @@
     <!-- <img class="teste" src="https://wallpapercave.com/wp/wp5702075.png" alt="..."> -->
     <div class="{{ loadingFundo() }}"><img class="loading" src={{loadingImg()}}></div>
     <h1> {{ loading == false ? null : 'Anime'}} </h1>
-    <div class="resp" *ngIf="show()">
+    <div class="resp" *ngIf="anime">
         <div class="contResp" *ngFor="let resp of anime">
             <div routerLink="/detalhes" (click)="detalhes(resp)">
                 <img class="imgResp" src="{{resp.attributes.posterImage.small}}">
                 <p>{{resp.attributes.titles.en_jp || resp.attributes.titles.en || resp.attributes.titles.en_us}}</p>
             </div>
         </div>   
-        <div class="container">
-          <button class="trocarPagina" (click)="previousPage()">Previous</button>
-          <button class="trocarPagina" (click)="nextPage()">Next</button>
+        <div id="containerBtn" class="container">
+          <button id="btn1" class="waves-effect waves-light btn-small" (click)="previousPage()">Previous</button>
+          <button id="btn2" class="waves-effect waves-light btn-small" (click)="nextPage()">Next</button>
       </div> 
     </div>
     <h1> {{ loading == false ? null : 'Manga'}} </h1>
-    <div class="resp" *ngIf="show()">
+    <div class="resp" *ngIf="anime">
         <div class="contResp" *ngFor="let resp of manga">
             <div routerLink="/detalhes" (click)="detalhes(resp)">
                 <img class="imgResp" src="{{resp.attributes.posterImage.small}}">
@@ -45,9 +45,9 @@
             </div>
         </div> 
         
-        <div class="container">
-          <button class="trocarPagina" (click)="previousPageM()">Previous</button>
-          <button class="trocarPagina" (click)="nextPageM()">Next</button>
+        <div id="containerBtn" class="container">
+          <button id="btn1" class="waves-effect waves-light btn-small" (click)="previousPageM()">Previous</button>
+          <button id="btn2" class="waves-effect waves-light btn-small" (click)="nextPageM()">Next</button>
       </div>
    
     </div>

@@ -37,3 +37,18 @@ p{
 .imgResp:hover {
     transform: scale(1.05);
 }
+
+#containerBtn{
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn1{
+    background-color: #F16EA5;
+
+
+}
+#btn2{
+    background-color: #FE6688;
+
+}

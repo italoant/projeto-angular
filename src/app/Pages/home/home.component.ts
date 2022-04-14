@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { delay, Subscription } from 'rxjs';
+import { Subscription} from 'rxjs';
 import { PesquisaService } from 'src/app/shared/pesquisa.service';
 
 
@@ -15,8 +15,7 @@ export class HomeComponent implements OnInit {
   anime = Array();
   manga = Array();
 
-  subsAnime: Subscription;
-  subsManga: Subscription;
+  subs: Subscription[] = [];
 
   loading: boolean = false
 
@@ -24,31 +23,24 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.subsAnime = this.service.list('anime')
-      .subscribe(dados => {
-        setTimeout(() => (this.anime = dados.data), 2000)
-      });
-    this.subsManga = this.service.list('manga')
+    this.subs.push(this.service.list('anime')
+    .subscribe(dados => {
+      setTimeout(() => (this.anime = dados.data), 2000)
+    })
+    ); 
+    this.subs.push(
+      this.service.list('manga')
       .subscribe(dadosM => {
         setTimeout(() => (this.manga = dadosM.data), 2000)
       })
-
+    ) 
   }
 
   ngOnDestroy(): void {
-    this.subsAnime.unsubscribe();
-    this.subsManga.unsubscribe();
+    this.subs.forEach(e => e.unsubscribe)
 
   }
 
-
-  show() {
-    if (this.anime.length === 0 && this.manga.length === 0) {
-      return false
-    } else {
-      return true
-    }
-  }
   detalhes(e) {
     localStorage.setItem('detalhes', JSON.stringify(e))
 

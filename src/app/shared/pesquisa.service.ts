@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PesquisaService {
 
 
-  api: string = 'https://kitsu.io/api/edge/'
+  private readonly API = environment.API
 
   popular: string = '?sort=-popularityRank';
 
@@ -24,7 +25,10 @@ export class PesquisaService {
   constructor(private http: HttpClient) { }
 
   list(page): Observable<any>{
-    return this.http.get(this.api + page + this.paginacao + this.pagina);
+    return this.http.get(this.API + page + this.paginacao + this.pagina)
+    .pipe(
+      delay(2000)
+    );
   }
 
   listPequisa(page): Observable<any>{
@@ -33,6 +37,6 @@ export class PesquisaService {
 
 
   buscar(search, pagina): Observable<any>{
-    return this.http.get(this.api + pagina + '?filter[text]=' +  search)
+    return this.http.get(this.API + pagina + '?filter[text]=' +  search)
   }
 }
