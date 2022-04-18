@@ -21,12 +21,11 @@ import { CadastroModule } from './Pages/PagesForms/cadastro/cadastro.module';
 import { authGuard } from './guards/aurh-guard';
 import { NotFoundComponent } from './Pages/not-found/not-found.component';
 import { PerfilModule } from './Pages/perfil/perfil.module';
-import { ContatoComponent } from './Pages/paginasFooter/contato/contato.component';
-import { EquipeComponent } from './Pages/paginasFooter/equipe/equipe.component';
-import { SobreComponent } from './Pages/paginasFooter/sobre/sobre.component';
 import { EquipeModule } from './Pages/paginasFooter/equipe/equipe.module';
 import { SobreModule } from './Pages/paginasFooter/sobre/sobre.module';
 import { ContatoModule } from './Pages/paginasFooter/contato/contato.module';
+
+
 
 
 
@@ -40,9 +39,10 @@ import { ContatoModule } from './Pages/paginasFooter/contato/contato.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HomeModule,
     HttpClientModule,
+    FormsModule,
+
+    HomeModule,
     AnimeModule,
     MangasModule,
     NoticiasModule,
@@ -53,6 +53,7 @@ import { ContatoModule } from './Pages/paginasFooter/contato/contato.module';
     EquipeModule,
     SobreModule,
     ContatoModule,
+    
     AppRoutingModule
   ],
   providers: [

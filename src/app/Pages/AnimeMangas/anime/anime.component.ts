@@ -1,6 +1,6 @@
 import { localizedString } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { delay, Subscription } from 'rxjs';
+import { catchError, delay, Subscription } from 'rxjs';
 import { PesquisaService } from 'src/app/shared/pesquisa.service';
 
 
@@ -29,6 +29,8 @@ export class AnimeComponent implements OnInit {
       .subscribe(resp => {
         setTimeout(() => { this.respPesquisa = resp.data }, 1000)
       });
+
+  
 
   }
 

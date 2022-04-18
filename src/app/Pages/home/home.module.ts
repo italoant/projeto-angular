@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import {  routingTelasModule } from '../AnimeMangas/routing.animeMangas.module';
 
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+
 
 
 @NgModule({
@@ -13,6 +16,7 @@ import {  routingTelasModule } from '../AnimeMangas/routing.animeMangas.module';
   ],
   imports: [
     CommonModule,
+    CarouselModule.forRoot(),
     routingTelasModule
   ]
 })

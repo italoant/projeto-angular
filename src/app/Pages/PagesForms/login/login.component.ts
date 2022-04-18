@@ -45,10 +45,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.formulario.valid) {
+    if (this.formulario.valid && this.formulario.value.user === localStorage.getItem('nome') && this.formulario.value.pass === localStorage.getItem('pass')) {
       localStorage.setItem('logado', 'true')
       localStorage.setItem('imagem', 
-      'https://images.tcdn.com.br/img/img_prod/697730/adesivo_lateral_vidro_caminhao_carro_decorativo_pantera_cor_de_rosa_1147486528_1_6704304bea8d50ab62a3eef851fc63ea.jpg')
+      'https://img.elo7.com.br/product/zoom/342ED94/painel-de-festa-3d-sublimada-pantera-cor-de-rosa-1-50x1-50-painel-de-festa-redondo-da-pantera-cor-de.jpg')
       
       this.logado.usuarioLogado.emit(true)
       this.router.navigate([''])

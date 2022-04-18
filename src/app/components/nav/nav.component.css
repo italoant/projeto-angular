@@ -20,7 +20,48 @@
 #menu{
     background-color: #FE6688;
     opacity: 80%;
+    height: 9vh;
+    align-items: center;
 }
+.logo{
+    width: 30px;
+    cursor: pointer;
+    margin: 20px;
+}
+.navRight{
+    display: flex;
+}
+
+.imgNome{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px 0 0;
+}
+.imgNome p {
+    margin: 0;
+}
+.imgNome img {
+    margin: 0 auto;
+}
+
+.imgPerfil{
+    cursor: pointer;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.esquerda{
+    display: flex;
+    align-items: center;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+
 
 a:hover{
     color: black;

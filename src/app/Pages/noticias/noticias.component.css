@@ -1,0 +1,114 @@
+#container-up {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    gap: 10%;
+}
+
+.container {
+    width: 100vw;
+}
+.esquerda{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.direita{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infoEsquerda {
+    display: flex;
+    align-items: center;
+}
+
+.destaque{
+    height: 30vh;
+    width: 30rem;
+}
+
+#down {
+    display: flex;
+    margin: 129px;
+}
+
+.contInfos{
+    display: flex;
+    align-items: center;
+}
+
+.infos {
+    width: 30vw;
+}
+
+.data-detalhes {
+    display: flex;
+}
+
+.alta{
+    width: 15rem;
+    height: 10rem;
+    border-radius: 5px;
+}
+h5.area{
+    background-color: pink;
+    width: 5rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+h5,h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    background: #FFBDBF;
+}
+
+h4{
+    background: none;
+}
+h1{
+    text-align: center;
+    text-shadow: 2px 2px 5px #FFBDBF;
+    text-transform: uppercase;
+    padding: 2rem;
+}
+h3{
+    margin: 0px;
+    text-shadow: 2px 2px 5px #FFBDBF;
+    font-variant: small-caps;
+    font-size: 2rem;
+}
+
+button {
+    border: none;
+    background: none;
+    outline: none;
+    background-color: #fe6688;
+    border-radius: 6px;
+    padding: 0 1%;
+    width: 5rem;
+    color: #d1cab6;
+}
+
+p {
+    margin: 0;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+img {
+    width: 200px;
+    height: 120px;
+    margin: 2%;
+    transition: 2s;
+}
+img:hover{
+    transform: scale(1.05);
+}

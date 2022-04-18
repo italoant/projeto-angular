@@ -13,6 +13,12 @@ export class NavComponent implements OnInit {
 
   trocarNav: boolean = false;
 
+  nome: string = localStorage.getItem('nome')
+
+  imagem: string = localStorage.getItem('imagem');
+
+  
+
   inscricao: Subscription;
 
   constructor(
@@ -21,10 +27,10 @@ export class NavComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.inscricao = this.serviceAuth.usuarioLogado.subscribe(
+    this.serviceAuth.usuarioLogado.subscribe(
       resp => this.trocarNav = resp
     )
-
+     
   
   }
 
@@ -32,7 +38,7 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('logado')
     this.serviceAuth.usuarioLogado.emit(false)
     this.trocarNav = false
-    this.router.navigate([''])    
+    this.router.navigate([''])   
   }
 
 }

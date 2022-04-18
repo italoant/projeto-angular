@@ -1,0 +1,32 @@
+.containerText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    gap: 5rem;
+    margin-top: 5vh;
+    padding: 0;
+}
+.container h1{
+    margin-bottom: 3vh;
+}
+p{
+    font-size: 1.2rem;;
+}
+.bot{
+    margin-top: 5vh;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    margin: 0px;
+    padding: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px #FFBDBF;
+    text-transform: uppercase;
+}
+h4{
+    text-shadow: 2px 2px 5px #FFBDBF;
+    text-transform: uppercase;
+
+}

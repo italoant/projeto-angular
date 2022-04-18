@@ -33,10 +33,10 @@
 }
 
 #imagemResp {
-    width: 170px;
+    width: 200px;
     margin: .8rem;
     border-radius: 1rem;
-    transition: .6s;
+    transition: all 1s ease 0s;
     box-shadow: 3px 3px 10px pink;              
 }
 #imagemResp:hover {

@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
         setTimeout(() => (this.manga = dadosM.data), 2000)
       })
     ) 
+    localStorage.setItem('logado', 'true')
   }
 
   ngOnDestroy(): void {
