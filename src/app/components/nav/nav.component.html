@@ -27,15 +27,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/cadastro">Cadastro</a>
       </li>
-      <li>
-        <input (click)="setTheme()" type="checkbox" id="falseBtn" />
-        <label for="falseBtn">
-          <img class="theme" src="../../../assets/theme.png" />
-        </label>
+      <li (click)="setTheme()" class="nav-item">
+        <img class="theme" src={{yingyang}} alt="">
       </li>
-      <!-- <li (click)="setTheme()" class="nav-item">
-        <img class="theme" src="../../../assets/theme.png" alt="">
-      </li> -->
 
     </ul>
 

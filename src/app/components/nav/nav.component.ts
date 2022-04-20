@@ -17,10 +17,11 @@ export class NavComponent implements OnInit {
 
   imagem: string = localStorage.getItem('imagem');
 
-  valor: string;
-
   inscricao: Subscription;
 
+  yingyang: string = localStorage.getItem('yingyang')
+
+  darkMode: string = localStorage.getItem('')
 
   constructor(
     private router: Router,
@@ -31,16 +32,21 @@ export class NavComponent implements OnInit {
     this.serviceAuth.usuarioLogado.subscribe(
       resp => this.trocarNav = resp
     )
-
-     
+    localStorage.setItem('yingyang', '../../../assets/theme1.png')
+    
   
   }
 
-
   setTheme(){
-    const theme = document.getElementsByClassName('dark')
     document.body.classList.toggle('dark')
 
+    
+    if (localStorage.getItem('yingyang') === '../../../assets/theme2.png') {
+      localStorage.setItem('yingyang', '../../../assets/theme1.png')
+    } else {
+      localStorage.setItem('yingyang', '../../../assets/theme2.png')
+    }
+    this.yingyang = localStorage.getItem('yingyang')
   }
 
   deslog(){

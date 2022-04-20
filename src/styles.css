@@ -3,14 +3,15 @@
     --body: #FFFFFF;
     --text: rgba(85, 72, 76, 0.9);
     --border: #FE858A;
+    --rotate: '0deg'
     
 }
 
 :root .dark{
-    --nav: linear-gradient(rgba(85, 72, 76, 80), rgba(85, 72, 76, 40), rgba(85, 72, 76, 20), rgba(85, 72, 76, 10), rgba(85, 72, 76, 2));
-    --body: rgba(85, 72, 76, 0.9);
+    --nav: rgba(85, 72, 76, 0.9);
+    --body: rgba(85, 72, 76, 2);
     --text: #FFFFFF;
-    --border: #FFFFFF;    
+    --border: #FFFFFF;
 }
 
 
@@ -19,24 +20,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    transition: background-color 1.5s;
 }
 
 body {
     overflow-x: hidden;
     height: 100vh;
     background-color: var(--body);
+    
 }
 p, h1, h2, h3, h4, h5{
     color: var(--text);
 }
 
 
-#falseBtn{
-    display: none;
-}
-#falseBtn:checked + label > img {
-    animation: theme 1s linear running;
-}
 
 h1, h2, h3, h4, h5{
     color: var(--text);
@@ -80,13 +77,5 @@ input{
     }
 }
 
-@keyframes theme{
-    0%{
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(180deg);
-    }
-    
-}
+
 
