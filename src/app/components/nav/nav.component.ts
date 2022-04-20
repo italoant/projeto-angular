@@ -7,7 +7,7 @@ import { authService } from 'src/app/shared/authService';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
 
@@ -17,9 +17,10 @@ export class NavComponent implements OnInit {
 
   imagem: string = localStorage.getItem('imagem');
 
-  
+  valor: string;
 
   inscricao: Subscription;
+
 
   constructor(
     private router: Router,
@@ -30,8 +31,16 @@ export class NavComponent implements OnInit {
     this.serviceAuth.usuarioLogado.subscribe(
       resp => this.trocarNav = resp
     )
+
      
   
+  }
+
+
+  setTheme(){
+    const theme = document.getElementsByClassName('dark')
+    document.body.classList.toggle('dark')
+
   }
 
   deslog(){

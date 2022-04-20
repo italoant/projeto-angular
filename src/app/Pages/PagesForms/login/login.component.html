@@ -1,4 +1,4 @@
-
+<!-- 
 <form class="contForm" [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
     <h5> Login </h5>
@@ -32,4 +32,39 @@
 
     <h5>{{mensagem}}</h5>
 
+</form> -->
+
+<form class="container" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <h5> Login </h5>
+    <br>
+    <h5>{{mensagem}}</h5>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nome</label>
+        <input placeholder="Ex: Andre" type="email" class="form-control" formControlName="user" id="exampleInputEmail1">
+
+    </div>
+    <div>
+
+        <app-campo-error class="error" [error]="verificarMudancas('user')" mensagem="Usuario invalido">
+
+        </app-campo-error>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Senha</label>
+        <input placeholder="Ex: 12345678" type="password" formControlName="pass" id="pass" class="form-control" >
+    </div>
+    <div>
+        <app-campo-error class="error" [error]="verificarMudancas('pass')" mensagem="Senha invalida">
+        </app-campo-error>
+    </div>
+    <div class="contButton">
+        <button type="submit" class="btn btn-primary" id="btn1" [disabled]="!formulario.valid">Submit</button>
+        <button routerLink="/cadastro" class="btn btn-primary" id="btn2">Cadastre-se</button>
+    </div>
+
+    <p id="esqueceu-senha">Esqueceu a senha? <a id="contato" routerLink="/contato">Clique aqui.</a></p>
 </form>
+

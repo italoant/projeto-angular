@@ -22,13 +22,17 @@ h1{
 p{
     width: 200px;
 }
-.imgResp {
-    width: 200px;
-    margin: .8rem;
-    border-radius: 1rem;
-    transition: .6s;
-    box-shadow: 3px 3px 10px pink;
+:host{
+    .imgResp {
+        width: 200px;
+        margin: .8rem;
+        border-radius: 1rem;
+        transition: .6s;
+        box-shadow: 3px 3px 10px var(--border);
+        transition: 10seg;
+    }
 }
+
 .teste{
     width: 100vw;
     height: 40vh;
@@ -52,3 +56,10 @@ p{
     background-color: #FE6688;
 
 }
+
+.carouselImg{
+    width: 14%;
+    height: 30vh;
+}
+
+

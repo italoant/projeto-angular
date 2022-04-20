@@ -1,58 +1,44 @@
-<form class="contForm" [formGroup]="formulario" (ngSubmit)="onSubmit()">
-
+<form class="container" [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <h5> Preencha todos os campos </h5>
 
-    <div class="row" [ngClass]="aplicarCss('nome')">
-        <div class="input-field col s3">
-            <input placeholder="Nome" formControlName="nome" id="nome" type="text" class="validate">
-        </div>
-
+    <div class="mb-3" >
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" formControlName="nome" class="form-control" id="nome">
         <app-campo-error class="error" [error]="verificarMudancas('nome')" mensagem="Nome invalido">
 
         </app-campo-error>
     </div>
-
-    <div class="row" [ngClass]="aplicarCss('user')">
-        <div class="input-field col s3">
-            <input placeholder="Usuario" formControlName="user" id="usuario" type="text" class="validate">
-        </div>
-
-        <app-campo-error class="error" [error]="verificarMudancas('user')" mensagem="usuario invalido">
+    <div class="mb-3">
+        <label for="inputUser" class="form-label">Usuario</label>
+        <input type="text" formControlName="user" class="form-control" id="inputUser">
+        <app-campo-error class="error" [error]="verificarMudancas('user')" mensagem="Usuario invalido">
 
         </app-campo-error>
+
     </div>
-
-    <div class="row" [ngClass]="aplicarCss('email')">
-        <div class="input-field col s3">
-            <input placeholder="Email" formControlName="email" id="email" class="validate">
-        </div>
-
+    <div class="mb-3">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control" id="inputEmail">
         <app-campo-error class="error" [error]="verificarMudancas('email')" mensagem="Email invalido">
 
         </app-campo-error>
     </div>
-
-    <div class="row" [ngClass]="aplicarCss('pass')">
-        <div class="input-field col s3">
-            <input placeholder="Senha" formControlName="pass" id="Senha" type="password" class="validate">
-        </div>
-
+    <div class="mb-3">
+        <label for="inputPassword" class="form-label">Senha</label>
+        <input type="password" formControlName="pass" class="form-control" id="inputPassword">
         <app-campo-error class="error" [error]="verificarMudancas('pass')" mensagem="Senha invalida">
 
         </app-campo-error>
     </div>
-
-    <div class="row">
-        <div class="input-field col s3" [ngClass]="('date')">
-            <input placeholder="Usuario" id="usuario" type="date" formControlName="date" class="validate" max="2022-12-31">
-        </div>
+    <div class="mb-3">
+        <label for="dataNascimento" class="form-label">Data de nascimento</label>
+        <input type="date" formControlName="date" class="form-control" id="dataNascimento">
     </div>
-
 
 
     <div class="contButton">
-        <button type="submit" id="btn1" class="waves-effect waves-light btn-small">Cadastrar</button>
-        <a (click)="limpar()" id="btn2" class="waves-effect waves-light btn-small">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button (click)="limpar()" class="btn btn-primary">Cancelar</button>
     </div>
-
+    
 </form>

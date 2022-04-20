@@ -18,7 +18,7 @@
     justify-content: center;
     margin: 0 auto;
     align-items: center;
-    gap: 4%;
+    gap: 1%;
     width: 50%;
     padding: 1.5%;
 }
@@ -32,13 +32,23 @@
     max-height: 40vh;
 }
 
-#imagemResp {
-    width: 200px;
-    margin: .8rem;
-    border-radius: 1rem;
-    transition: all 1s ease 0s;
-    box-shadow: 3px 3px 10px pink;              
+:host{
+    #imagemResp {
+        width: 200px;
+        margin: .8rem;
+        border-radius: 1rem;
+        transition: all 1s ease 0s;
+        box-shadow: 3px 3px 10px var(--border);              
+    }
+    input{
+        border-radius: 3%;
+        background-color: #fff;
+        color: var(--text);
+        text-align: center;
+    }
 }
 #imagemResp:hover {
     transform: scale(1.05);
 }
+
+

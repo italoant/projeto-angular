@@ -1,65 +1,49 @@
-  <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="https://wallpapercave.com/wp/wp5702075.png" alt="...">
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="https://wallpapercave.com/wp/wp5702075.png" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://wallpapercave.com/wp/wp5702075.png" class="d-block w-100" alt="...">
-      </div>
+<carousel>
+  <slide>
+    <img class="carouselImg"
+      src="https://p4.wallpaperbetter.com/wallpaper/303/584/954/anime-girl-anime-pink-hd-wallpaper-preview.jpg"
+      alt="first slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img class="carouselImg" src="https://wallpapercave.com/wp/wp5702075.png" alt="second slide"
+      style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img class="carouselImg" src="https://wallpaperaccess.com/full/818292.png" alt="third slide"
+      style="display: block; width: 100%;">
+  </slide>
+</carousel>
+
+<div class="{{ loadingFundo() }}"><img class="loading" src={{loadingImg()}}></div>
+<h1> {{ loading == false ? null : 'Anime'}} </h1>
+<div class="resp" *ngIf="anime">
+  <div class="contResp" *ngFor="let resp of anime">
+    <div routerLink="/detalhes" (click)="detalhes(resp)">
+      <img class="imgResp" src="{{resp.attributes.posterImage.small}}">
+      <p>{{resp.attributes.titles.en_jp || resp.attributes.titles.en || resp.attributes.titles.en_us}}</p>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div> -->
+  </div>
 
-  <carousel>
-    <slide>
-      <img src="https://p4.wallpaperbetter.com/wallpaper/303/584/954/anime-girl-anime-pink-hd-wallpaper-preview.jpg" alt="first slide" style="display: block; width: 100%;">
-    </slide>
-    <slide>
-      <img src="https://wallpapercave.com/wp/wp5702075.png" alt="second slide" style="display: block; width: 100%;">
-    </slide>
-    <slide>
-      <img src="https://wallpaperaccess.com/full/818292.png" alt="third slide" style="display: block; width: 100%;">
-    </slide>
-  </carousel>
-
-
-    <!-- <img class="teste" src="https://wallpapercave.com/wp/wp5702075.png" alt="..."> -->
-    <div class="{{ loadingFundo() }}"><img class="loading" src={{loadingImg()}}></div>
-    <h1> {{ loading == false ? null : 'Anime'}} </h1>
-    <div class="resp" *ngIf="anime">
-        <div class="contResp" *ngFor="let resp of anime">
-            <div routerLink="/detalhes" (click)="detalhes(resp)">
-                <img class="imgResp" src="{{resp.attributes.posterImage.small}}">
-                <p>{{resp.attributes.titles.en_jp || resp.attributes.titles.en || resp.attributes.titles.en_us}}</p>
-            </div>
-        </div>   
-        <!-- <div id="containerBtn" class="container">
+  
+  <!-- <div id="containerBtn" class="container">
           <button id="btn1" class="waves-effect waves-light btn-small" (click)="previousPage()">Previous</button>
           <button id="btn2" class="waves-effect waves-light btn-small" (click)="nextPage()">Next</button>
       </div>  -->
+</div>
+
+
+<h1> {{ loading == false ? null : 'Manga'}} </h1>
+<div class="resp" *ngIf="anime">
+  <div class="contResp" *ngFor="let resp of manga">
+    <div routerLink="/detalhes" (click)="detalhes(resp)">
+      <img class="imgResp" src="{{resp.attributes.posterImage.small}}">
+      <p>{{resp.attributes.titles.en_jp || resp.attributes.titles.en || resp.attributes.titles.en_us}}</p>
     </div>
-    <h1> {{ loading == false ? null : 'Manga'}} </h1>
-    <div class="resp" *ngIf="anime">
-        <div class="contResp" *ngFor="let resp of manga">
-            <div routerLink="/detalhes" (click)="detalhes(resp)">
-                <img class="imgResp" src="{{resp.attributes.posterImage.small}}">
-                <p>{{resp.attributes.titles.en_jp || resp.attributes.titles.en || resp.attributes.titles.en_us}}</p>
-            </div>
-        </div> 
-        
-        <!-- <div id="containerBtn" class="container">
+  </div>
+
+  <!-- <div id="containerBtn" class="container">
           <button id="btn1" class="waves-effect waves-light btn-small" (click)="previousPageM()">Previous</button>
           <button id="btn2" class="waves-effect waves-light btn-small" (click)="nextPageM()">Next</button>
       </div> -->
-   
-    </div>
+
+</div>

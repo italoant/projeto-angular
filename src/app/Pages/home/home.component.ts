@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription} from 'rxjs';
+
+
 import { PesquisaService } from 'src/app/shared/pesquisa.service';
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 

@@ -1,15 +1,15 @@
-.container{
-    width: 40vw;
-    text-align: left;
-}
 .buttonCont{
     display: flex;
+    width: 20vw;
     justify-content: space-around;
     margin: 2%;
 }
-#enviar{
-    background-color: #F16EA5;
+input{
+    margin: .8%;
 }
-#cancelar{
-    background-color: #FE6688;
+.campos-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1%;
 }

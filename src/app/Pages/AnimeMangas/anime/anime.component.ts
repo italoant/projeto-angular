@@ -7,7 +7,7 @@ import { PesquisaService } from 'src/app/shared/pesquisa.service';
 @Component({
   selector: 'app-anime',
   templateUrl: './anime.component.html',
-  styleUrls: ['../animeManga.component.css']
+  styleUrls: ['../animeManga.component.scss']
 })
 export class AnimeComponent implements OnInit {
 
@@ -32,10 +32,6 @@ export class AnimeComponent implements OnInit {
 
   
 
-  }
-
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
   }
 
   loadingFundo() {

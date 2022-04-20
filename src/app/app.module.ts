@@ -24,6 +24,11 @@ import { PerfilModule } from './Pages/perfil/perfil.module';
 import { EquipeModule } from './Pages/paginasFooter/equipe/equipe.module';
 import { SobreModule } from './Pages/paginasFooter/sobre/sobre.module';
 import { ContatoModule } from './Pages/paginasFooter/contato/contato.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
 
 
 
@@ -53,8 +58,9 @@ import { ContatoModule } from './Pages/paginasFooter/contato/contato.module';
     EquipeModule,
     SobreModule,
     ContatoModule,
-    
-    AppRoutingModule
+    AppRoutingModule,
+    MatSidenavModule,
+    BrowserAnimationsModule
   ],
   providers: [
     authGuard,

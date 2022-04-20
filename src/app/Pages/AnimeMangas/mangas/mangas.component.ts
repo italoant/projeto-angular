@@ -5,7 +5,7 @@ import { PesquisaService } from 'src/app/shared/pesquisa.service';
 @Component({
   selector: 'app-mangas',
   templateUrl: './mangas.component.html',
-  styleUrls: ['../animeManga.component.css']
+  styleUrls: ['../animeManga.component.scss']
 })
 export class MangasComponent implements OnInit {
 
@@ -25,10 +25,7 @@ export class MangasComponent implements OnInit {
         setTimeout(() => { this.respPesquisa = resp.data }, 1000)
       });
   }
-  
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
-  }
+
 
 
   loadingFundo() {

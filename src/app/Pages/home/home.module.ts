@@ -16,7 +16,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
   ],
   imports: [
     CommonModule,
-    CarouselModule.forRoot(),
+    CarouselModule,
     routingTelasModule
   ]
 })

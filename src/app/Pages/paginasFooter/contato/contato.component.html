@@ -1,45 +1,39 @@
-<div class="container">
+<form class="container">
     <h2> Entre em contato </h2>
-    <div>
-        <h5> Preencha os campos deste formulário para entrar em contato com nossa equipe de desenvolvimento Front-End do
-            site PanimeE. </h5>
-        <p></p>
-        <div class="campos-form">
-            <input type="text" id="nome" placeholder="Ex.: Naruto Uzumaki" />
-        </div>
-        <div class="campos-form">
-            <input type="email" placeholder="Email@email.com" id="email" />
-        </div>
-        <div class="campos-form">
-            <label >Selecione um tema:</label>
-            <select>
-                <option value="" selected class="opcao">-</option>
-                <optgroup label="Senha:" class="opcao">
-                    <option value="esqueceuSenha" class="opcao">Esqueceu a senha</option>
-                </optgroup>
-                <optgroup label="Gerenciamento de conta:" class="opcao">
-                    <option value="gerenciamento" class="opcao">Solicitação de dados, recuperar conta e exclusão de
-                        conta</option>
-                </optgroup>
-                <optgroup label="Problemas técnicos:" class="opcao">
-                    <option value="problemasTecnicos" class="opcao">Lag, fechamento</option>
-                </optgroup>
-                <optgroup label="Outros:" class="opcao">
-                    <option value="outros" class="opcao">Outros temas</option>
-                </optgroup>
-            </select>
-        </div>
-        <div class="campos-form">
-            <label>Comentário: </label>
+    <h5> Preencha os campos deste formulário para entrar em contato com nossa equipe de desenvolvimento Front-End do
+        site PanimeE. </h5>
 
-
-            <textarea name="comentario" id="comentario" placeholder="Nos informe o motivo do contato..." cols="30" rows="5">
-            </textarea>
-
-        </div>
-        <div class="buttonCont">
-            <Button class="waves-effect waves-light btn-small" id="enviar" color="#F16EA5"> Enviar</Button>
-            <Button class="waves-effect waves-light btn-small" id="cancelar" color="#FE6688" type="button"> Cancelar </Button>
-        </div>
+    <div class="mb-3">
+      <input type="text" placeholder="Andre silva" class="form-control" id="nome" >
     </div>
-</div>
+    <div class="mb-3">
+      <input type="email" placeholder="email@email.com" class="form-control" id="email">
+    </div>
+    <div class="campos-form">
+        <label >Selecione um tema:</label>
+        <select>
+            <option value="" selected class="opcao">-</option>
+            <optgroup label="Senha:" class="opcao">
+                <option value="esqueceuSenha" class="opcao">Esqueceu a senha</option>
+            </optgroup>
+            <optgroup label="Gerenciamento de conta:" class="opcao">
+                <option value="gerenciamento" class="opcao">Solicitação de dados, recuperar conta e exclusão de
+                    conta</option>
+            </optgroup>
+            <optgroup label="Problemas técnicos:" class="opcao">
+                <option value="problemasTecnicos" class="opcao">Lag, fechamento</option>
+            </optgroup>
+            <optgroup label="Outros:" class="opcao">
+                <option value="outros" class="opcao">Outros temas</option>
+            </optgroup>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="buttonCont">
+        <Button  class="btn btn-primary" id="btn1" > Enviar</Button>
+        <Button  class="btn btn-primary" id="btn2" > Cancelar </Button>
+    </div>
+  </form>
